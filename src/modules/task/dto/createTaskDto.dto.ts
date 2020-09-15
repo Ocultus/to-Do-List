@@ -1,3 +1,6 @@
+import { IsString } from 'class-validator';
+
 export class CreateTaskDto {
-  description: string;
+  @IsString()
+  readonly description: string;
 }

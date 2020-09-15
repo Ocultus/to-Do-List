@@ -15,7 +15,7 @@ export class TaskService {
     const { description } = createTaskDto;
     task.description = description;
     task.createdAt = new Date();
-    task.status = TaskStatus.CREATED;
+    task.status = TaskStatus.CREATED.toString();
     return task.save();
   }
 
@@ -39,7 +39,7 @@ export class TaskService {
 
   async updateStatusById(id: number, status: TaskStatus) {
     const task = await this.getTaskById(id);
-    task.status = status;
+    task.status = status.toString();
     return task.save();
   }
 }

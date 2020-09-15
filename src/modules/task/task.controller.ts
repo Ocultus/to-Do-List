@@ -32,13 +32,14 @@ export class TaskController {
     return this.taskService.getTaskById(id);
   }
 
-  @Patch('/:id/status')
+  @Patch('/:id')
   async updateTaskStats(
     @Param('id') id: number,
     @Body('status') status: TaskStatus,
   ) {
     return this.taskService.updateStatusById(id, status);
   }
+
   @Delete(':id')
   async delete(@Param('id') id: number) {
     return this.taskService.getDeleteById(id);
